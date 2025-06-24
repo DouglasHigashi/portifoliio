@@ -1,14 +1,21 @@
- import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // <-- importe aqui
+import { Route, Routes, HashRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
+
+import HomeScreen from './screens/home/HomeScreen';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter> {/* <-- envolva aqui */}
-      <App />
-    </BrowserRouter>
+    <HashRouter>
+        <Routes>
+          <Route element={<App />} >
+            <Route path="/" element={<HomeScreen />} exact/>
+          </Route>
+        </Routes>
+      </HashRouter>
   </React.StrictMode>
 );
