@@ -1,21 +1,22 @@
-
+import MainNavbar from './components/mainNavbar/MainNavbar';
 import './App.css';
+import MainFooter from './components/mainFooter/MainFooter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      
+      <header>
+       <MainNavbar/>
       </header>
 
 
-       <main className="App-main">
+       <main >
       
       </main>
 
 
-       <footer className="App-footer">
-      
+       <footer >
+      <MainFooter/>
       </footer>
       
     </div>
