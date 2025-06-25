@@ -3,8 +3,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { MdFiberNew } from 'react-icons/md';
 import { MdNotificationImportant } from 'react-icons/md';
-import simpleman from'../../resources/audios/simpleman.mp3';
-import lonelyday from'../../resources/audios/lonelyday.mp3';
+import simpleman from '../../resources/audios/simpleman.mp3';
+import lonelyday from '../../resources/audios/lonelyday.mp3';
 
 import { IoPlayCircle } from 'react-icons/io5';
 import { IoPlaySkipBackCircle } from 'react-icons/io5';
@@ -289,8 +289,6 @@ export default function MainNavbar() {
          });
 
         player.addEventListener("timeupdate", () => {
-            console.log("player.duration", player.duration);
-            
             if ((player.currentTime / player.duration) !== NaN && (player.currentTime / player.duration) > 0) {
                 playerProgressBarsElements[0].value = (player.currentTime / player.duration);
                 playerProgressBarsElements[1].value = (player.currentTime / player.duration);
@@ -298,7 +296,6 @@ export default function MainNavbar() {
         });
 
         function handlePlayerPlayClick () {
-             console.log("player.duration", player.duration);
             if (Number(getLocalStorage_stateOfMusic().stateOfTime) > 0 && Number(getLocalStorage_stateOfMusic().stateOfTime) != player.duration) {
                 // ja existe um estado de musica salvo! reculpera qual musica e em qual parte parou:
                 let musicSelected = listOfMusics[Number(getLocalStorage_stateOfMusic().indexOfMusic)];
